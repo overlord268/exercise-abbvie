@@ -1,0 +1,61 @@
+/**
+ * Global CSS Styles
+ *
+ * This file contains the global styles for the Asset Library application.
+ * It includes Tailwind CSS imports, CSS custom properties for theming,
+ * and base styles for consistent appearance across the application.
+ */
+
+/* Import Tailwind CSS utilities and components */
+@import "tailwindcss";
+
+/**
+ * CSS Custom Properties (CSS Variables)
+ *
+ * Defines the base color scheme and theme variables that can be used
+ * throughout the application. These variables support both light and dark modes.
+ */
+:root {
+  --background: #ffffff;  /* Light mode background color */
+  --foreground: #171717;  /* Light mode text color */
+}
+
+/**
+ * Tailwind Theme Configuration
+ *
+ * Maps CSS custom properties to Tailwind's theme system for consistent
+ * usage of colors and fonts throughout the application.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);    /* Primary font for UI elements */
+  --font-mono: var(--font-geist-mono);    /* Monospace font for technical content */
+}
+
+/**
+ * Dark Mode Support
+ *
+ * Automatically switches to dark mode colors when the user's system
+ * preference is set to dark mode. This provides a seamless experience
+ * without requiring manual theme switching.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;  /* Dark mode background color */
+    --foreground: #ededed;  /* Dark mode text color */
+  }
+}
+
+/**
+ * Base Body Styles
+ *
+ * Sets the default background and text colors for the entire application
+ * using the CSS custom properties defined above. This ensures consistent
+ * theming across all components.
+ */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;  /* Fallback font stack */
+}
